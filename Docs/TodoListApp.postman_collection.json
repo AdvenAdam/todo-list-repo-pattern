@@ -183,13 +183,13 @@
 			"response": []
 		},
 		{
-			"name": "Patch Data",
+			"name": "Update Partial Data",
 			"request": {
 				"method": "PATCH",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"position\": 0\n}\n",
+					"raw": "{\n    \"completed\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -204,6 +204,33 @@
 					"path": [
 						"todos",
 						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reorder Data",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 1,\n        \"position\": 1\n    },\n    {\n        \"id\": 4,\n        \"position\": 2\n    },\n    {\n        \"id\": 2,\n        \"position\": 3\n    },\n    {\n        \"id\": 3,\n        \"position\": 4\n    },\n    {\n        \"id\": 115,\n        \"position\": 5\n    },\n    {\n        \"id\": 5,\n        \"position\": 6\n    },\n    {\n        \"id\": 117,\n        \"position\": 7\n    },\n    {\n        \"id\": 118,\n        \"position\": 9\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/todos/batch",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"todos",
+						"batch"
 					]
 				}
 			},
